@@ -1,10 +1,12 @@
-name: Actions Runner Controller Demo
+name: Runners
 on:
   workflow_dispatch:
 
 jobs:
-  Explore-GitHub-Actions:
+  my-job-test:
     # You need to use the INSTALLATION_NAME from the previous step
     runs-on: self-hosted
     steps:
     - run: echo "🎉 This job uses runner scale set runners!"
+    - run: lscpu
+    - run: cat /etc/os-release

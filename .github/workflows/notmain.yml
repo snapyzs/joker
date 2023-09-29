@@ -1,0 +1,16 @@
+name: Runners_two
+on:
+  workflow_dispatch:
+
+jobs:
+  my-job-test:
+    # You need to use the INSTALLATION_NAME from the previous step
+    runs-on: self-hosted
+    steps:
+    - run: echo "🎉 This job uses runner scale set runners!"
+    - run: lscpu
+    - run: cat /etc/os-release
+  my-next-job:
+    runs-on: for-test
+    steps:
+    - run: echo "run on for-test"
